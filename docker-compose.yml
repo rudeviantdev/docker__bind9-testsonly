@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  bind9:
+    container_name: application__bind9
+    image: rudeviantdev/bind9-testsonly
+    restart: always
+    environment:
+      ROOT_PASSWORD: "password"
+      WEBMIN_ENABLED: "true"
+    ports:
+      - "10053:53/udp"
+      - "10053:53/tcp"
+      - "10000:10000/tcp"
